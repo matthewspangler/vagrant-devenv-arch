@@ -29,11 +29,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: "pacman -Syyu --noconfirm"
 
   # Script to install pacman packages detailed in ./custom/packages.txt, runs every time VM boots:
-  config.vm.provision :shell, inline: "pacman -Sy --noconfirm --needed - < /home/vagrant/custom/pkglist.txt", run: 'always'
+  config.vm.provision :shell, inline: "pacman -Sy --noconfirm --needed - < /home/vagrant/custom/pkglist.txt"
   # pkglist made with: 'pacman -Qqen > pkglist.txt'
 
   # Replace nox guest utils with guest utils that support x11:
-  #config.vm.provision :shell, inline: "yes | pacman -S --noconfirm virtualbox-guest-utils"
+  #config.vm.provision :shell, inline: "yes | pacman -S --noconfirm virtualbox-guest-qutils"
 
   # Enable SDDM so we can launch KDE Plasma:
   config.vm.provision :shell, inline: "systemctl enable sddm"
