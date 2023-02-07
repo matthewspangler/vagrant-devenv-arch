@@ -17,13 +17,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder  "custom/", "/home/vagrant/custom", disabled: false
 
   # Directory for sharing my code between host and guest:
-  config.vm.synced_folder "code/", "/home/vagrant/code", disabled: false
-
-  # Share Emacs config between host and guest:
-  config.vm.synced_folder "emacs/", "/home/vagrant/.emacs.d", disabled: false
-
-  # Share dotfiles between host and guest:
-  config.vm.synced_folder "dotfiles/", "/home/vagrant/dotfiles", disabled: false
+  config.vm.synced_folder "home/", "/home/vagrant/", disabled: false
 
   # Update + upgrade system
   config.vm.provision :shell, inline: "pacman -Syyu --noconfirm"
