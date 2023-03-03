@@ -4,9 +4,9 @@ This repository deploys a development environment with my dotfiles and most comm
 
 Clone the repository, run 'vagrant up' and everything will be automatically set up.
 
-# Installation
+** Installation
 
-## Dependencies for Arch Linux (host).
+*** Dependencies for Arch Linux (host).
 
 #+name: Arch-Linux
 #+begin_src shell
@@ -20,7 +20,7 @@ Clone the repository, run 'vagrant up' and everything will be automatically set 
 
 Troubleshooting: https://wiki.archlinux.org/title/Vagrant
 
-## Dependencies for Windows >= 10
+*** Dependencies for Windows >= 10
 
 Set up rsync: https://developer.hashicorp.com/vagrant/docs/synced-folders/rsync
 
@@ -28,5 +28,5 @@ Run vagrant with virtualbox as the provider:
 
 #+name: Windows
 #+begin_src shell
-vagrant up --provider=virtualbox
+  vagrant up --provider=virtualbox
 #+end_src

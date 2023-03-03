@@ -86,6 +86,7 @@ Vagrant.configure("2") do |config|
   rsync \
   rust-analyzer  \
   rustup \
+  sddm \
   stow \
   thefuck  \
   tldr \
