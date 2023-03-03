@@ -1,0 +1,32 @@
+# Vagrant Development Environment - Arch Linux
+
+This repository deploys a development environment with my dotfiles and most commonly used software, using Vagrant and VirtualBox.
+
+Clone the repository, run 'vagrant up' and everything will be automatically set up.
+
+# Installation
+
+## Dependencies for Arch Linux (host).
+
+#+name: Arch-Linux
+#+begin_src shell
+  sudo pacman -S vagrant libvirt iptables-nft dnsmasq dmidecode bridge-utils gnu-netcat virt-manager virt-viewer qemu-full nfs-utils puppet
+  vagrant plugin install vagrant-libvirt vagrant-vbguest vagrant-share
+  sudo systemctl enable --now
+  libvirtd.service
+  sudo usermod -aG libvirt $USER
+  export VAGRANT_DEFAULT_PROVIDER=libvirt
+#+end_src
+
+Troubleshooting: https://wiki.archlinux.org/title/Vagrant
+
+## Dependencies for Windows >= 10
+
+Set up rsync: https://developer.hashicorp.com/vagrant/docs/synced-folders/rsync
+
+Run vagrant with virtualbox as the provider:
+
+#+name: Windows
+#+begin_src shell
+vagrant up --provider=virtualbox
+#+end_src
