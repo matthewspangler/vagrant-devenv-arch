@@ -30,8 +30,6 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
     # Select graphics controller:
     vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-    # Turn off host I/O cache to speed up VM:
-    vb.customize ["modifyvm", :id, "--hostiocache", "off"]
     vb.gui = true
     vb.name = "Arch Dev Box"
   end
