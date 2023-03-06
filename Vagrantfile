@@ -24,10 +24,14 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "8192"
     vb.cpus = 4
-    # >9MB vram necessary for seamless mode:-
+    # >9MB vram necessary for seamless mode:
     vb.customize ["modifyvm", :id, "--vram", "256"]
     # Enable 3D acceleration:
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    # Select graphics controller:
+    vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+    # Turn off host I/O cache to speed up VM:
+    vb.customize ["modifyvm", :id, "--hostiocache", "off"]
     vb.gui = true
     vb.name = "Arch Dev Box"
   end
@@ -83,6 +87,7 @@ Vagrant.configure("2") do |config|
   python-pip \
   python-pyqt5 \
   python-pywal \
+  remmina \
   rsync \
   rust-analyzer  \
   rustup \
